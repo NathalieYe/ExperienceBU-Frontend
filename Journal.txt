@@ -1,0 +1,4 @@
+1. Created react project with npx create-react-app 
+2. Deleted src and revamped the structure 
+3. npm install --save redux, react-redux, react-dom, react-router-dom 
+    (version specifications are in package-lock.json)
