@@ -5,18 +5,13 @@ import {Provider} from "react-redux";
 import {createStore} from "redux";
 
 
-import App from "./components/App";
-import reducers from "./reducers";
-
-
-//code for switch statement navigation here?
-
+import App from "./App";
 
 
 
 
 ReactDOM.render(
-<Provider store = {createStore(reducers)}>
+<Provider>
 <App />
 </Provider>, 
 document.querySelector("#root"));
