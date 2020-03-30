@@ -1,8 +1,9 @@
 import React from "react";
+import "./components/MastHead/MastHead.js"
 
 const App = () => {
     return <div>
-        Hello
+        <MastHead></MastHead>
     </div>
 };
 
