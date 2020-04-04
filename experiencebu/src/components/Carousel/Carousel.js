@@ -14,7 +14,7 @@ export default class MyCarousel extends Component {
         <Carousel
         autoPlay={4000}
         animationSpeed={1000}
-        itemWidth ={400}
+        itemWidth ={700}
         arrowLeft= <img src={leftie}/> 
         arrowRight= <img src={rightie}/> 
         addArrowClickHandler

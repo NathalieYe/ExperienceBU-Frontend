@@ -1,0 +1,44 @@
+:root {
+    --footer-font--Color: #ffffff;
+    --navbar-active--Color: #B2E4D8;
+    --TEXT_HEIGHT: 60px;
+    --WIDTH: 50vh;
+    --FONT: 'Rubik', sans-serif;
+  }
+
+.about {
+    text-indent: 20px;
+}
+
+.text {
+    color: white;
+}
+
+.teamname{
+    color: white;
+    line-height: 60px;
+    text-align: right;
+    justify-content: right;
+    text-indent: 50vw;
+}
+
+
+.pf-c-page__footer-nav {
+    font-family: var(--FONT);
+    height: var(--TEXT_HEIGHT);
+    --pf-c-nav__tertiary-list-item--MarginRight: var(--pf-global--spacer--xl);
+    --pf-c-nav__tertiary-list-link--PaddingTop: var(--pf-global--spacer--md);
+    --pf-c-nav__tertiary-list-link--PaddingBottom: var(--pf-global--spacer--sm);
+    --pf-c-nav__tertiary-list-link--FontWeight: var(--pf-global--FontWeight--normal);
+    --pf-c-nav__tertiary-list-link--Color: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--hover--Color: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--active--Color: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--focus--Color: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--after--Height: 0.1875rem;
+    --pf-c-nav__tertiary-list-link--hover--after--BackgroundColor: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--active--after--BackgroundColor: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--focus--after--BackgroundColor: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--m-current--Color: var(--footer-font--Color);
+    --pf-c-nav__tertiary-list-link--m-current--after--BackgroundColor: var(--footer-font--Color);
+  }
+

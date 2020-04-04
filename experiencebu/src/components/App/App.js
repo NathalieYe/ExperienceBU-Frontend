@@ -6,6 +6,9 @@ import {
   Text
 } from '@patternfly/react-core';
 import Carousel from '../Carousel/Carousel.js';
+import Spotlight from '../Spotlight/Spotlight.js'
+import "../Spotlight/Spotlight.css"
+import Footer from "../Footer/footer.js"
 
 class App extends React.Component {
   render() {
@@ -17,11 +20,13 @@ class App extends React.Component {
     return (
       <div>
         <Masthead></Masthead>
-        <Text>
-        Events of the Week
+        <Text className = 'headert'>
+        EVENTS OF THE WEEK
         </Text>
         <Carousel>
         </Carousel>
+        <Spotlight></Spotlight>
+        <Footer></Footer>
       </div>
     );
   }
