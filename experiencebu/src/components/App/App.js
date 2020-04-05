@@ -5,10 +5,8 @@ import '@patternfly/react-core/dist/styles/base.css';
 import {
   Text
 } from '@patternfly/react-core';
-import Carousel from '../Carousel/Carousel.js';
-import Spotlight from '../Spotlight/Spotlight.js'
-import "../Spotlight/Spotlight.css"
 import Footer from "../Footer/footer.js"
+import ClubInfo from "../ClubInfo/ClubInfo.js"
 
 class App extends React.Component {
   render() {
@@ -20,12 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <Masthead></Masthead>
-        <Text className = 'headert'>
-        EVENTS OF THE WEEK
-        </Text>
-        <Carousel>
-        </Carousel>
-        <Spotlight></Spotlight>
+        <ClubInfo></ClubInfo>
         <Footer></Footer>
       </div>
     );
@@ -34,16 +27,3 @@ class App extends React.Component {
 
 export default App;
 
-/*
-{'height: 60px;width: 302px; color: #0E0E0E;font-family:"Red Hat Display";font-size: 24px;font-weight: 500;letter-spacing: 0;line-height: 31px;'}> 
-.events-of-the-week {
-  height: 60px;
-  width: 302px;
-  color: #0E0E0E;
-  font-family: "Red Hat Display";
-  font-size: 24px;
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 31px;
-}
-*/

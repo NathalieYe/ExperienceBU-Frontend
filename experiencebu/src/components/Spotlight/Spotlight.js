@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Grid, GridItem } from '@patternfly/react-core';
+import { Grid, GridItem, Button } from '@patternfly/react-core';
 import vsa from './vsa.png'
 import "./Spotlight.css"
 
@@ -17,8 +17,11 @@ export default class Spotlight extends React.Component {
     </GridItem>
     <GridItem span={1}></GridItem>
     <GridItem span={6}></GridItem>
-    <GridItem span={1}>Learn More</GridItem>
-    <GridItem span={1}></GridItem>
+    <GridItem span={1}> <Button variant="link" isInline>
+      Learn More
+    </Button> </GridItem>
+    <GridItem span={1}> </GridItem>
+    <GridItem span={12} className = 'bottom'></GridItem>
   </Grid>
 
             

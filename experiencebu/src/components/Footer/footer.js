@@ -31,7 +31,8 @@ export default class NavTertiaryList extends React.Component {
       <Nav onSelect={this.onSelect}>
         <div className='pf-c-page__footer-nav'>
         <NavList variant={NavVariants.tertiary}>
-         <NavItem className='about'> About </NavItem>
+         <NavItem></NavItem>
+         <NavItem className='text'> About </NavItem>
          <NavItem className='text'> Contact </NavItem>
          <NavItem className='text'> Student Activities Office </NavItem>
          <Text className='teamname'> By Team EmptyIdleness </Text>

@@ -1,81 +1,79 @@
 :root {
-    --navbar-font--Color: #ffffff;
-    --navbar-active--Color: #B2E4D8;
-    --TEXT_HEIGHT: 80px;
-    --WIDTH: 10vw;
+  --navbar-font--Color: #ffffff;
+  --navbar-active--Color: #B2E4D8;
+  --TEXT_HEIGHT: 80px;
+}
+
+.home {
+  width: 10vw;
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px; 
+  font-weight: 500; 
+  letter-spacing: 0;
   }
   
-  .home {
-    width: var(--WIDTH);
-    line-height: 30px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 24px; 
-    font-weight: 500; 
-    letter-spacing: 0;
-    }
-    
-  .events {
-    width: var(--WIDTH);
-    line-height: 30px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 0;
-    }
-  
-  .organizations {
-    width: 30vw;
-    line-height: 30px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 24px;
-    font-weight: 500;
-    letter-spacing: 0;
-    }
-  
-  .username {
-    width: 56px;
-    line-height: 30px;
-    font-family: 'Rubik', sans-serif;
-    font-size: 20px;
-    letter-spacing: 0;
-    justify-content: flex-end;
-    float: right;
-    margin-left: auto;
-    margin-right: 14px;
+.events {
+  width: 12vw;
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
   }
-  
-  
-  .title {
-    width: 160px;
-    line-height: 60px;
-    color: #ffffff;
-    font-family: 'Rubik', sans-serif;
-    font-size: 26px;
-    font-weight: 500;
-    letter-spacing: 0;
-    word-spacing: normal;
-    float: left;
-    text-indent: 30px;
+
+.organizations {
+  width: 38vw;
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
   }
-  
-  .BU {
-    width: 14vw;
-    line-height: 60px;
-    color: #CC0000;
-    font-family: 'Rubik', sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    float: left;
-  }
-  
-  .pf-c-page__header-nav {
-    height: var(--TEXT_HEIGHT);
-    --pf-c-nav__horizontal-list-link--Color: var( --navbar-font--Color);  
-    --pf-c-nav__horizontal-list-link--hover--Color: var(--navbar-active--Color);
-    --pf-c-nav__horizontal-list-link--active--Color: var(--navbar-active--Color);
-    --pf-c-nav__horizontal-list-link--focus--Color: var(--navbar-active--Color);
-    --pf-c-nav__horizontal-list-link--hover--after--BackgroundColor: var(--navbar-font--Color);
-    --pf-c-nav__horizontal-list-link--active--after--BackgroundColor: var(--navbar-font--Color);
-    --pf-c-nav__horizontal-list-link--focus--after--BackgroundColor: var(--navbar-font--Color);
-  }
+
+.username {
+  width: 10vw;
+  line-height: 30px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0;
+  justify-content: flex-end;
+  float: right;
+  margin-left: auto;
+}
+
+
+.title {
+  width: 160px;
+  line-height: 60px;
+  color: #ffffff;
+  font-family: 'Rubik', sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 0;
+  word-spacing: normal;
+  float: left;
+  text-indent: 30px;
+}
+
+.BU {
+  width: 10vw;
+  line-height: 60px;
+  color: #CC0000;
+  font-family: 'Rubik', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  float: left;
+}
+
+.pf-c-page__header-nav {
+  height: var(--TEXT_HEIGHT);
+  --pf-c-nav__horizontal-list-link--Color: var( --navbar-font--Color);  
+  --pf-c-nav__horizontal-list-link--hover--Color: var(--navbar-active--Color);
+  --pf-c-nav__horizontal-list-link--active--Color: var(--navbar-active--Color);
+  --pf-c-nav__horizontal-list-link--focus--Color: var(--navbar-active--Color);
+  --pf-c-nav__horizontal-list-link--hover--after--BackgroundColor: var(--navbar-font--Color);
+  --pf-c-nav__horizontal-list-link--active--after--BackgroundColor: var(--navbar-font--Color);
+  --pf-c-nav__horizontal-list-link--focus--after--BackgroundColor: var(--navbar-font--Color);
+}
 
