@@ -1,0 +1,14 @@
+:root{
+    --padding: 2vw;
+    --rand-height: 20px;
+    --button-color: yellow;
+}
+
+.pf-c-page__button{
+    --pf-c-button--m-primary--active--BackgroundColor: --button-color;
+    --pf-c-button--BorderRadius: var(--rand-height);
+    --pf-c-button--LineHeight: var(--rand-height);
+}
+
+/* --pf-c-button--PaddingLeft
+--pf-c-button__icon--MarginRight */

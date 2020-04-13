@@ -1,0 +1,15 @@
+
+.img {
+    border-radius: 50%;
+  }
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 15vw;
+}
+
+.caption {
+  display: block;
+}

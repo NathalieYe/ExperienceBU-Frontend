@@ -11,6 +11,13 @@ import {
   Text
 } from '@patternfly/react-core';
 import "./MastHead.css"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 class NavHorizontalList extends React.Component {
   constructor(props) {
@@ -34,9 +41,17 @@ class NavHorizontalList extends React.Component {
           <Text className='title'> Experience </Text>
           <Text className='BU'> BU </Text>
           <NavItem></NavItem>
-          <NavItem className='home'> HOME </NavItem>
+          <NavItem className='home'>
+            <Link to="/">
+             HOME 
+             </Link>
+          </NavItem>
           <NavItem className='events'> EVENTS </NavItem>
-          <NavItem className='organizations' > ORGANIZATIONS </NavItem>
+          <NavItem className='organizations'> 
+            <Link to="/clubPage"> 
+            ORGANIZATIONS 
+            </Link>
+          </NavItem>
           <NavItem className='username'> Log In </NavItem>
         </NavList>
         </div>

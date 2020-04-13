@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
 import './EventInfo.css';
 import banner from "../Spotlight/event.jpg"
-import arrow from "./leftarrow.png"
 
 export default class EventInfo extends React.Component {
     render() {

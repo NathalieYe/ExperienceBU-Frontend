@@ -2,6 +2,12 @@ import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
 import vsa from './vsa.png'
 import "./Spotlight.css"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 export default class Spotlight extends React.Component {
     render(){
@@ -17,9 +23,12 @@ export default class Spotlight extends React.Component {
     </GridItem>
     <GridItem span={1}></GridItem>
     <GridItem span={6}></GridItem>
-    <GridItem span={1}> <Button variant="link" isInline>
+   
+    <GridItem span={1}>  <Link to="/clubInfoPage"> <Button variant="link" isInline>
       Learn More
-    </Button> </GridItem>
+    </Button>   
+   </Link>
+    </GridItem>
     <GridItem span={1}> </GridItem>
     <GridItem span={12} className = 'bottom'></GridItem>
   </Grid>

@@ -2,14 +2,15 @@ import React from 'react';
 import { Grid, GridItem, Button } from '@patternfly/react-core';
 import './ClubInfo.css';
 import banner from "./rose.jpg"
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 export default class ClubInfo extends React.Component {
     render() {
         return (
             <Grid className='infogrid'>
-            <GridItem span={12} className='goback'> <Button variant="link" >
+            <GridItem span={12} className='goback'> <Link to="/clubPage"> <Button variant="link" >
             <i class="fas fa-chevron-left"></i> Go back to Clubs 
-    </Button>{' '} </GridItem>
+            </Button>{' '} </Link> </GridItem>
             <GridItem span={7} className='headert'>
               Ad Club 
             </GridItem>
