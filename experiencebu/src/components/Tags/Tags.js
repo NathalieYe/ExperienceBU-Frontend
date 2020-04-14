@@ -37,7 +37,7 @@ class ControlledCheckbox extends React.Component {
     return (
       <React.Fragment>
         <Checkbox
-          label="Parent CheckBox"
+          label="Main Category 1"
           isChecked={this.state.check1}
           onChange={this.handleChange}
           aria-label="controlled checkbox example"
@@ -46,7 +46,7 @@ class ControlledCheckbox extends React.Component {
         />
         <Checkbox
           className="nested"
-          label="Child CheckBox 1"
+          label="Sub Tag 1"
           isChecked={this.state.check2}
           onChange={this.handleChange}
           aria-label="controlled checkbox example"
@@ -55,7 +55,7 @@ class ControlledCheckbox extends React.Component {
         />
         <Checkbox
           className="nested"
-          label="Child CheckBox 2"
+          label="Sub Tag 2"
           isChecked={this.state.check3}
           onChange={this.handleChange}
           aria-label="controlled checkbox example"
@@ -63,7 +63,7 @@ class ControlledCheckbox extends React.Component {
           name="check3"
         />
         <Checkbox
-          label="Controlled CheckBox"
+          label="Main Category 2"
           isChecked={this.state.check4}
           onChange={this.handleChange}
           aria-label="controlled checkbox example"

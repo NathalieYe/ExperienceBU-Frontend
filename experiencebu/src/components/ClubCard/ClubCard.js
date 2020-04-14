@@ -1,8 +1,7 @@
 import React from 'react';
 import './ClubCard.css'; 
 import { Card, CardHead, CardHeader } from '@patternfly/react-core';
-import club1 from './vsa.png'
-import logo from './logoo.jpg'
+import logo from './bulog.png'
 
 
 export default class ClubCard extends React.Component {
@@ -11,9 +10,9 @@ export default class ClubCard extends React.Component {
         <Card>
             <div className='item'>
             <CardHead>
-            <img src={logo} className='img' style={{ height: '15vw' }}/>
+            <img src={logo} className='img' style={{ height: '18vw' }}/>
             </CardHead> 
-            <CardHeader className='caption'>VSA</CardHeader>
+            <CardHeader className='caption'>ClubName</CardHeader>
             </div>
         </Card>
     );
