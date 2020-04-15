@@ -7,7 +7,10 @@ div.item {
   vertical-align: top;
   display: inline-block;
   text-align: center;
-  width: 15vw;
+  margin-top: -3vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
 }
 
 .caption {
