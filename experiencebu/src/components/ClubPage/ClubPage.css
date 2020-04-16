@@ -2,10 +2,16 @@
     --margin-left: 4vw;
     --font-color: #878B91;
     --font: 'Rubik', sans-serif;
+    --margin-top: -20px;
 }
 
 .sidebar {
-    width: 20vw;
+    width: 800px;
+}
+
+.page {
+    margin-top: var(--margin-top);
+    margin-left: 20px;
 }
 
 .headert{

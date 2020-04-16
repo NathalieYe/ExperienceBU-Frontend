@@ -13,7 +13,7 @@ export default class Spotlight extends React.Component {
     render(){
         return (
             <Grid>
-    <GridItem span={12} className = 'headert' >CLUB SPOTLIGHT</GridItem>
+    <GridItem span={12} className = 'headert' >Organization Spotlight</GridItem>
     <GridItem span={1}></GridItem>
     <GridItem span={3} rowSpan={4}>
       <img src={vsa}/>

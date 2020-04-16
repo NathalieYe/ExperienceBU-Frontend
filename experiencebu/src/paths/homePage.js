@@ -21,9 +21,6 @@ class homePage extends React.Component {
     return (
       <div>
         <Masthead></Masthead>
-        <Text className = 'headert'>
-        EVENTS OF THE WEEK
-        </Text>
         <div className="carouselbg">
         <Carousel>
         </Carousel>

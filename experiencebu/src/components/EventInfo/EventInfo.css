@@ -2,6 +2,7 @@
     --margin-left: 4vw;
     --font-color: #878B91;
     --font: 'Rubik', sans-serif;
+    --margintop: -30px;
 }
 
 .subheading {
@@ -43,4 +44,5 @@
     margin-left: var(--margin-left);
     color: var(--font-color);
     font-family: var(--font);
+    margin-top: var(--margintop);
 }

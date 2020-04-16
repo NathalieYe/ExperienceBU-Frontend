@@ -30,7 +30,7 @@ export default class ClubPage extends React.Component {
       const Sidebar = <PageSidebar  nav={PageNav} isNavOpen={isNavOpen}/>;
     
       return (
-          <Page header={Header} sidebar={Sidebar} children={Bar} >
+          <Page className='page' header={Header} sidebar={Sidebar} children={Bar}>
           
           <PageSection style={{height: '20em'}}>
             

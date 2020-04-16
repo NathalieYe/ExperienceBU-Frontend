@@ -1,11 +1,12 @@
 :root {
   --navbar-font--Color: #000000;
   --navbar-active--Color: #B2E4D8;
-  --navbar-height: 80px;
+  --navbar-after-height: 3px;
+  --navbar-paddingbottom: 0px;
 }
 
 .home {
-  line-height: 60px;
+  line-height: 90px;
   font-family: 'Rubik', sans-serif;
   font-size: 20px; 
   font-weight: 500; 
@@ -13,7 +14,7 @@
   }
   
 .events {
-  line-height: 60px;
+  line-height: 90px;
   font-family: 'Rubik', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -21,7 +22,7 @@
   }
 
 .organizations {
-  line-height: 60px;
+  line-height: 90px;
   font-family: 'Rubik', sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -29,7 +30,7 @@
   }
 
 .username {
-  line-height: 60px;
+  line-height: 90px;
   font-family: 'Rubik', sans-serif;
   font-size: 20px;
   letter-spacing: 0;
@@ -39,18 +40,18 @@
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .title {
   width: 160px;
-  line-height: 90px;
+  line-height: 110px;
   color: #000000;
   font-family: 'Rubik', sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
   letter-spacing: 0;
   word-spacing: normal;
@@ -60,18 +61,18 @@
 
 .BU {
   width: 20px;
-  line-height: 90px;
+  line-height: 110px;
   color: #CC0000;
   font-family: 'Rubik', sans-serif;
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 500;
   float: left;
-  text-indent: 52px;
+  text-indent: 80px;
 }
 
 .phrase {
   width: 600px;
-  line-height: 140px;
+  line-height: 154px;
   font-family: 'Rubik', sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -80,7 +81,8 @@
 }
 
 .pf-c-page__header-nav {
-  height: var(--navbar-height);
+  --pf-c-nav__horizontal-list-link--PaddingBottom: var(--navbar-paddingbottom);
+  --pf-c-nav__horizontal-list-link--after--Height: var(--navbar-after-height);
   --pf-c-nav__horizontal-list-link--Color: var( --navbar-font--Color);  
   --pf-c-nav__horizontal-list-link--hover--Color: var(--navbar-active--Color);
   --pf-c-nav__horizontal-list-link--active--Color: var(--navbar-active--Color);

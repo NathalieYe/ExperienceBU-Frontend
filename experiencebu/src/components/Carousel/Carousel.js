@@ -4,6 +4,7 @@ import '@brainhubeu/react-carousel/lib/style.css';
 import img1 from './img/imageOne.png';
 import img2 from './img/imageTwo.JPG';
 import img3 from './img/imageThree.jpeg';
+import './Carousel.css'
 
 export default class MyCarousel extends Component {
   constructor(props){

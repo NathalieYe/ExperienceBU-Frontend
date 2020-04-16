@@ -28,7 +28,7 @@ export default class SearchBar extends React.Component {
 
       return (
          <DataToolbar id="data-toolbar">
-             <DataToolbarContent className='mast'>{items}
+             <DataToolbarContent>{items}
              </DataToolbarContent>
         </DataToolbar>
       );
