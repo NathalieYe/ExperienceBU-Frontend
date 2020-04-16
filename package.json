@@ -2,6 +2,9 @@
   "name": "experiencebu",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12.16.1"
+  },
   "dependencies": {
     "@brainhubeu/react-carousel": "^1.13.23",
     "@emotion/core": "^10.0.28",
