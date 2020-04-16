@@ -1,5 +1,6 @@
 import React from 'react';
 import { Checkbox } from '@patternfly/react-core';
+import "./Tags.css"
 
 class ControlledCheckbox extends React.Component {
   constructor(props) {

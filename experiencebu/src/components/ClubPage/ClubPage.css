@@ -4,16 +4,8 @@
     --font: 'Rubik', sans-serif;
 }
 
-.subheading {
-    font-size: 19px;
-    font-weight: 500; 
-    margin-bottom: 1vh;
-    margin-top: 1vh;
-}
-
-.goback {
-    margin-top: 5vh;
-    margin-bottom: 1vh;
+.sidebar {
+    width: 20vw;
 }
 
 .headert{
@@ -23,26 +15,4 @@
     font-size: 36px; 
     font-weight: 350;
     font: 'Rubik', sans-serif;
-}
-
-.botpadding {
-    margin-bottom: 2vh;
-}
-
-.botmargin {
-    margin-bottom: 6vh;
-}
-
-.italic {
-    font-style: italic;
-}
-
-.bold {
-    font-weight: 600;
-}
-
-.infogrid {
-    margin-left: var(--margin-left);
-    color: var(--font-color);
-    font-family: var(--font);
 }

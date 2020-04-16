@@ -18,17 +18,17 @@ export default class SearchBar extends React.Component {
         const items = <React.Fragment>
         <DataToolbarItem>
         <InputGroup>
-          <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
-          <Button variant="control"  className='pf-c-page__button'>
-          <SearchIcon />
+        <Button variant="control"  className='pf-c-page__button'>
+          <SearchIcon className='icon'/>
           </Button>
+          <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />
         </InputGroup>
         </DataToolbarItem>
         </React.Fragment>
 
       return (
          <DataToolbar id="data-toolbar">
-             <DataToolbarContent>{items}
+             <DataToolbarContent className='mast'>{items}
              </DataToolbarContent>
         </DataToolbar>
       );

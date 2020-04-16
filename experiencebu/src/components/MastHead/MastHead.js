@@ -17,6 +17,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import logo from './logo.png';
 
 
 class NavHorizontalList extends React.Component {
@@ -38,8 +39,10 @@ class NavHorizontalList extends React.Component {
       <Nav onSelect={this.onSelect}>
         <div className='pf-c-page__header-nav'>
         <NavList  variant={NavVariants.horizontal} > 
-          <Text className='title'> Experience </Text>
+          <img src={logo} className='logo'/>
+          <Text className='title'> EXPERIENCE_ </Text>
           <Text className='BU'> BU </Text>
+          <Text className='phrase'> Find the right events and organizations based on your schedule</Text>
           <NavItem></NavItem>
           <NavItem className='home'>
             <Link to="/">
@@ -52,13 +55,17 @@ class NavHorizontalList extends React.Component {
             ORGANIZATIONS 
             </Link>
           </NavItem>
+          <NavItem></NavItem>
+          <NavItem></NavItem>
+          <NavItem></NavItem>
+          <NavItem></NavItem>
           <NavItem className='username'> Log In </NavItem>
         </NavList>
         </div>
       </Nav>
     );
     return (
-      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(29, 28, 20)' }} />
+      <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(255,255,255)' }} />
     );
   }
 }

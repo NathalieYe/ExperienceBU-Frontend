@@ -4,6 +4,11 @@
     --button-color: yellow;
 }
 
+.icon{
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
 .pf-c-page__button{
     --pf-c-button--m-primary--active--BackgroundColor: --button-color;
     --pf-c-button--BorderRadius: var(--rand-height);
