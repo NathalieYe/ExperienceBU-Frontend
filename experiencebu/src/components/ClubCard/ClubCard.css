@@ -1,0 +1,18 @@
+
+.img {
+    border-radius: 50%;
+  }
+
+div.item {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  margin-top: -3vh;
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 3vh;
+}
+
+.caption {
+  display: block;
+}

@@ -1,0 +1,13 @@
+.headert{
+    margin-top: 2%;
+    height: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 26px; 
+    font-weight: 500; 
+    text-indent: 5%;
+    color: black
+}
+
+.bottom{
+    margin-bottom: 2%;
+}

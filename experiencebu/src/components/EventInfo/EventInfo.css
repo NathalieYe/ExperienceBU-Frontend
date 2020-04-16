@@ -1,0 +1,46 @@
+:root {
+    --margin-left: 4vw;
+    --font-color: #878B91;
+    --font: 'Rubik', sans-serif;
+}
+
+.subheading {
+    font-size: 19px;
+    font-weight: 500; 
+    margin-bottom: 1vh
+}
+
+.goback {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+}
+
+.headert{
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    height: 50px;
+    font-size: 36px; 
+    font-weight: 350;
+}
+
+.botpadding {
+    margin-bottom: 2vh;
+}
+
+.botmargin {
+    margin-bottom: 6vh;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.infogrid {
+    margin-left: var(--margin-left);
+    color: var(--font-color);
+    font-family: var(--font);
+}
