@@ -2,18 +2,21 @@
     --padding: 2vw;
     --rand-height: 20px;
     --button-color: yellow;
+    --hover-color: white;
+}
+
+.pf-c-input-group{
+    --pf-global--BorderColor--100: var(--hover-color);
+    --pf-global--link--Color--hover: var(--hover-color);
+    background-color: white;
+    width: 260px;
+    border-radius: 30px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 2vh;
 }
 
 .icon{
     margin-left: 0.5vw;
     margin-right: 0.5vw;
 }
-
-.pf-c-page__button{
-    --pf-c-button--m-primary--active--BackgroundColor: --button-color;
-    --pf-c-button--BorderRadius: var(--rand-height);
-    --pf-c-button--LineHeight: var(--rand-height);
-}
-
-/* --pf-c-button--PaddingLeft
---pf-c-button__icon--MarginRight */

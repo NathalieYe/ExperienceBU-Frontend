@@ -21,10 +21,10 @@ export default class ClubPage extends React.Component {
     render() {
       const { isNavOpen } = this.state;
       const PageNav = (
-      <div className='sidebar'> 
+      <Nav className='sidebar'>
         <Bar></Bar>
         <Tags></Tags>
-      </div>
+      </Nav>
       )
     
       const Sidebar = <PageSidebar  nav={PageNav} isNavOpen={isNavOpen}/>;

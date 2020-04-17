@@ -4,24 +4,31 @@
     --TEXT_HEIGHT: 60px;
     --WIDTH: 50vh;
     --FONT: 'Rubik', sans-serif;
+    --footer-color: white;
+    --footer-lineheight: 60px;
   }
 
 
 
-.text {
-    color: white;
+.school {
+  font-weight: 400;
+}
+
+.spark {
+  font-weight: 300;
+  margin-left: 5px;
 }
 
 .teamname{
-    color: white;
-    line-height: 60px;
     text-align: right;
     justify-content: right;
-    text-indent: 50vw;
+    text-indent: 48vw;
 }
 
 
 .pf-c-page__footer-nav {
+    line-height: var(--footer-lineheight);
+    color: var(--footer-color);
     font-family: var(--FONT);
     height: var(--TEXT_HEIGHT);
     --pf-c-nav__tertiary-list-item--MarginRight: var(--pf-global--spacer--xl);

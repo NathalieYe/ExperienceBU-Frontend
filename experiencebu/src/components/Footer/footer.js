@@ -32,9 +32,8 @@ export default class NavTertiaryList extends React.Component {
         <div className='pf-c-page__footer-nav'>
         <NavList variant={NavVariants.tertiary}>
          <NavItem></NavItem>
-         <NavItem className='text'> About </NavItem>
-         <NavItem className='text'> Contact </NavItem>
-         <NavItem className='text'> Student Activities Office </NavItem>
+         <Text className='school'> Boston University </Text>
+         <Text className='spark'> SPARK! Innovation Fellowship Project Spring 2020 </Text>
          <Text className='teamname'> By Team EmptyIdleness </Text>
         </NavList>
         </div>

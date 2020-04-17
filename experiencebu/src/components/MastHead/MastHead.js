@@ -44,6 +44,9 @@ class NavHorizontalList extends React.Component {
           <Text className='BU'> BU </Text>
           <Text className='phrase'> Find the right events and organizations based on your schedule</Text>
           <NavItem></NavItem>
+          <NavItem></NavItem>
+          <NavItem></NavItem>
+          <NavItem></NavItem>
           <NavItem className='home'>
             <Link to="/">
              HOME 
@@ -55,7 +58,6 @@ class NavHorizontalList extends React.Component {
             ORGANIZATIONS 
             </Link>
           </NavItem>
-          <NavItem></NavItem>
           <NavItem></NavItem>
           <NavItem></NavItem>
           <NavItem></NavItem>

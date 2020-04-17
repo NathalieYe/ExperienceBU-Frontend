@@ -38,6 +38,7 @@ class ControlledCheckbox extends React.Component {
     return (
       <React.Fragment>
         <Checkbox
+          className='tags'
           label="Main Category 1"
           isChecked={this.state.check1}
           onChange={this.handleChange}
@@ -64,6 +65,7 @@ class ControlledCheckbox extends React.Component {
           name="check3"
         />
         <Checkbox
+          className='tags'
           label="Main Category 2"
           isChecked={this.state.check4}
           onChange={this.handleChange}

@@ -17,8 +17,8 @@ export default class SearchBar extends React.Component {
     render() {
         const items = <React.Fragment>
         <DataToolbarItem>
-        <InputGroup>
-        <Button variant="control"  className='pf-c-page__button'>
+        <InputGroup className='pf-c-input-group'>
+        <Button variant="control">
           <SearchIcon className='icon'/>
           </Button>
           <TextInput name="textInput11" id="textInput11" type="search" aria-label="search input example" />

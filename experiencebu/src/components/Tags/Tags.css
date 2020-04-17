@@ -1,3 +1,13 @@
 .nested {
-    margin-left: 1vw;
+    margin-left: 4vw;
+    margin-bottom: 5px;
+    --pf-c-check__label--Color: white;
+    --pf-c-check__label--disabled--Color: white;
+}
+
+.tags {
+    --pf-c-check__label--Color: white;
+    --pf-c-check__label--disabled--Color: white;
+    margin-left: 3vw;
+    margin-bottom: 5px;
 }

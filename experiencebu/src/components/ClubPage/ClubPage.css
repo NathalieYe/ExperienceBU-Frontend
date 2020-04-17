@@ -7,11 +7,12 @@
 
 .sidebar {
     width: 800px;
+    height: 200vh;
+    background-color: #2DB095;
 }
 
 .page {
     margin-top: var(--margin-top);
-    margin-left: 20px;
 }
 
 .headert{
