@@ -8,6 +8,13 @@
     color: black
 }
 
+.image{
+    border-radius: 50%;
+    padding-right: 20px;
+    padding-left: 40px;
+    height: 250px;
+}
+
 .bottom{
     margin-bottom: 2%;
 }

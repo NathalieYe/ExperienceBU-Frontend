@@ -44,6 +44,31 @@ export default class Spotlight extends React.Component {
       .catch(console.log)
     }
   */
+    description(clubs) {
+      var Arr = clubs.clubs
+      console.log(Arr.length)
+
+      if (Arr.length != 0) {
+        console.log("In the function")
+        console.log({clubs})
+        return Arr[0].description
+      }
+
+      return <Text> Helloitme </Text>
+    }
+
+    image(clubs) {
+      var Arr = clubs.clubs
+      console.log(Arr.length)
+
+      if (Arr.length != 0) {
+        console.log("In the function")
+        console.log({clubs})
+        return Arr[0].picture
+      }
+      return {vsa}
+    }
+  
 
     render() {
       console.log("Render Method Called")
@@ -51,12 +76,11 @@ export default class Spotlight extends React.Component {
     return (
     <Grid>
     <GridItem span={12} className = 'headert' >Organization Spotlight</GridItem>
-    <GridItem span={1}></GridItem>
-    <GridItem span={3} rowSpan={4}>
-      <img src={vsa}/>
+    <GridItem span={4} rowSpan={3}>
+      <img className='image' src={this.image(this.state)}/>
     </GridItem>
-    <GridItem span={7} rowSpan={3}>
-     <Description clubs={this.state.clubs} ></Description>
+    <GridItem span={7} rowSpan={2}>
+      {this.description(this.state)}
     </GridItem>
     <GridItem span={1}></GridItem>
     <GridItem span={6}></GridItem>
