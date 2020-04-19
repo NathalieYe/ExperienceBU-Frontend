@@ -45,34 +45,9 @@ export default class Spotlight extends React.Component {
     }
   */
 
-
     render() {
       console.log("Render Method Called")
       console.log(this.state)
-      if (this.state.clubs[0]){
-        return (
-          <Grid>
-          <GridItem span={12} className = 'headert' >Organization Spotlight</GridItem>
-          <GridItem span={1}></GridItem>
-          <GridItem span={3} rowSpan={4}>
-            <img src="http://lorempixel.com/640/480/city"/>
-          </GridItem>
-          <GridItem span={7} rowSpan={3}>
-           {this.state.clubs[0].description}
-          </GridItem>
-          <GridItem span={1}></GridItem>
-          <GridItem span={6}></GridItem>
-          <GridItem span={1}>  <Link to="/clubInfoPage"> <Button variant="link" isInline>
-            Learn More
-          </Button>   
-         </Link>
-          </GridItem>
-          <GridItem span={1}> </GridItem>
-          <GridItem span={12} className = 'bottom'></GridItem>
-        </Grid>
-        )
-    }
-
     return (
     <Grid>
     <GridItem span={12} className = 'headert' >Organization Spotlight</GridItem>
