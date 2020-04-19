@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 export default class ClubInfo extends React.Component {
     render() {
+      console.log(this.props)
         return (
             <Grid className='infogrid'>
             <GridItem span={12} className='goback'> <Link to="/clubPage"> <Button variant="link" >

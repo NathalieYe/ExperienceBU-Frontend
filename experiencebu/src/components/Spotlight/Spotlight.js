@@ -46,11 +46,7 @@ export default class Spotlight extends React.Component {
   */
     description(clubs) {
       var Arr = clubs.clubs
-      console.log(Arr.length)
-
       if (Arr.length != 0) {
-        console.log("In the function")
-        console.log({clubs})
         return Arr[0].description
       }
 
@@ -59,32 +55,35 @@ export default class Spotlight extends React.Component {
 
     image(clubs) {
       var Arr = clubs.clubs
-      console.log(Arr.length)
-
       if (Arr.length != 0) {
-        console.log("In the function")
-        console.log({clubs})
         return Arr[0].picture
       }
       return {vsa}
     }
+
+    linkto(clubs) {
+      var Arr = clubs.clubs
+      if (Arr.length != 0) {
+        return `/clubInfoPage/${Arr[0].name}`
+      }
+      return "/clubInfoPage"
+    }
   
 
     render() {
-      console.log("Render Method Called")
-      console.log(this.state)
     return (
     <Grid>
     <GridItem span={12} className = 'headert' >Organization Spotlight</GridItem>
-    <GridItem span={4} rowSpan={3}>
+    <GridItem span={4} rowSpan={4}>
       <img className='image' src={this.image(this.state)}/>
     </GridItem>
+    <GridItem span={7} className='clubname'> ClubName </GridItem> 
     <GridItem span={7} rowSpan={2}>
       {this.description(this.state)}
     </GridItem>
     <GridItem span={1}></GridItem>
     <GridItem span={6}></GridItem>
-    <GridItem span={1}>  <Link to="/clubInfoPage"> <Button variant="link" isInline>
+    <GridItem span={1}>  <Link to={this.linkto(this.state)}> <Button variant="link" isInline>
       Learn More
     </Button>   
    </Link>

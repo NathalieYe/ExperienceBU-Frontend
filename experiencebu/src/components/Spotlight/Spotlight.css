@@ -18,3 +18,9 @@
 .bottom{
     margin-bottom: 2%;
 }
+
+.clubname{
+    text-decoration: underline;
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+}

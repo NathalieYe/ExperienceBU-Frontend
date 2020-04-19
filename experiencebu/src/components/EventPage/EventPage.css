@@ -1,0 +1,61 @@
+:root {
+    --margin-left: 4vw;
+    --font-color: #878B91;
+    --font: 'Rubik', sans-serif;
+    --margin-top: -20px;
+}
+
+.sidebar {
+    width: 800px;
+    height: 200vh;
+    background-color: #2DB095;
+}
+
+.page {
+    margin-top: var(--margin-top);
+}
+
+.headert{
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    height: 50px;
+    font-size: 36px; 
+    font-weight: 300;
+    font: 'Rubik', sans-serif;
+}
+
+.card{
+    background-color: #ECEADF;
+    border-radius: 20px;
+    width: 18vw;
+    text-indent: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: #286A6A;
+}
+
+.eventit{
+    margin-top: -15px;
+    margin-bottom: -8px;
+    text-decoration: underline;
+    font-family: 'Rubik', sans-serif;
+}
+
+.contain{
+    margin-left: 4vw;
+    margin-right: 4vw;
+}
+
+.resultcard{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    color: #286A6A;
+}
+
+.descr{
+    color: black;
+    margin-top: 8px;
+    margin-bottom: 2vh;
+}

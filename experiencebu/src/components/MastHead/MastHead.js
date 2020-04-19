@@ -52,7 +52,11 @@ class NavHorizontalList extends React.Component {
              HOME 
              </Link>
           </NavItem>
-          <NavItem className='events'> EVENTS </NavItem>
+          <NavItem className='events'> 
+            <Link to="/eventPage"> 
+            EVENTS
+            </Link> 
+          </NavItem>
           <NavItem className='organizations'> 
             <Link to="/clubPage"> 
             ORGANIZATIONS 

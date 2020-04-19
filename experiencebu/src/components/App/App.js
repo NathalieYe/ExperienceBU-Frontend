@@ -11,6 +11,7 @@ import clubInfoPage from "../../paths/clubInfoPage.js"
 import clubPage from "../../paths/clubPage.js"
 import eventInfoPage from "../../paths/eventInfoPage.js"
 import homePage from "../../paths/homePage.js"
+import eventPage from "../../paths/eventPage.js"
 
 
 class App extends React.Component {
@@ -19,13 +20,18 @@ class App extends React.Component {
    
       <div>
         <Switch>
-          <Route path="/eventInfoPage" component={eventInfoPage}>
-          </Route>
-
+          {/*Static Routes*/}
           <Route path="/clubPage" component={clubPage}>
           </Route>
 
-          <Route path="/clubInfoPage" component={clubInfoPage}>
+          <Route path="/eventPage" component={eventPage}>
+          </Route>
+
+        {/*Dynamic Routes*/}
+          <Route exact path="/clubInfoPage/:name" component={clubInfoPage}>
+          </Route>
+
+          <Route exact path="/eventInfoPage/:name" component={eventInfoPage}>
           </Route>
 
           <Route path="/" component={homePage}>
