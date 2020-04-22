@@ -2,7 +2,7 @@ module.exports = function(){
     var faker = require("faker");
     var _ = require("lodash");
     return {
-        clubs: _.times(100, function(n) {
+        clubs: _.times(2, function(n) {
             return {
                 id:n,
                 name:faker.company.companyName(),

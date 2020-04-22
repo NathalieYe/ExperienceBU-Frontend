@@ -1,0 +1,33 @@
+:root {
+    --tabs_color: green;
+    --pf-global--active-color--100: green;
+}
+
+.pf-c-tabs {
+    --pf-c-tabs__item--hover--Color: var(--tabs_color);
+    --pf-c-tabs__scroll-button--m-secondary--hover--Color: var(--tabs_color);
+    --pf-c-tabs__scroll-button--m-secondary--hover--Color: var(--tabs_color);
+    --pf-c-tabs__button--Background: var(--tabs_color);
+    --pf-c-tabs__item--m-current--Color: var(--tabs_color);
+    --pf-c-tabs__item--BackgroundColor: var(--tabs_color);
+    --pf-c-tabs__scroll-button--m-secondary--nth-of-type-1--BoxShadow: var(--pf-global--BoxShadow--lg-bottom);
+    --pf-c-tabs__scroll-button--m-secondary--nth-of-type-2--BoxShadow: var(--pf-global--BoxShadow--lg-bottom);
+}
+
+.atab {
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    width: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    margin-bottom: 2vh;
+    height: 6vh;
+    font-weight: 300;
+    border-style: none;
+}
+
+.spacetab {
+    width: 4vw;
+    border-style: none;
+    cursor: none;
+}

@@ -5,6 +5,7 @@ import {Nav, Text, Page,Header,PageSection,PageSidebar, Flex, FlexItem, FlexModi
 } from '@patternfly/react-core';
 import Bar from "../SearchBar/SearchBar.js"
 import Tags from "../Tags/Tags.js"
+import EventCard from "./EventCard.js"
 
 export default class ClubPage extends React.Component {
   constructor(props) {
@@ -67,20 +68,8 @@ export default class ClubPage extends React.Component {
             <Calendar></Calendar>
 
             <Text className='headert'> Event Results (2) </Text>
-            <Card className='resultcard'> 
-                <CardHeader className='eventit'> Event Name </CardHeader>
-                <CardBody> Time </CardBody>
-                <CardBody> Location </CardBody>
-                <CardBody> Affiliated Club </CardBody>    
-                <CardBody className='descr'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </CardBody>
-            </Card>
-            <Card className='resultcard'> 
-                <CardHeader className='eventit'> Event Name </CardHeader>
-                <CardBody> Time </CardBody>
-                <CardBody> Location </CardBody>
-                <CardBody> Affiliated Club </CardBody>    
-                <CardBody className='descr'> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </CardBody>
-            </Card>
+            <EventCard></EventCard>
+            <EventCard></EventCard>
 
         </PageSection>
           </Page>

@@ -1,8 +1,16 @@
 {
-    "people": [
-        {
-            "id": 0,
-            "name":"John"
-        }
-    ]
+    "clubs": 
+      {
+        "id": 0,
+        "name": "Mills and Sons",
+        "picture": "http://lorempixel.com/640/480/fashion",
+        "description": "Soluta consequatur doloremque expedita tempore vel enim quia repudiandae eum. Delectus consequatur voluptates doloribus unde dolore asperiores aperiam esse.",
+        "requirements": "N/A",
+        "eboard": "N/A",
+        "time": "12:00:00",
+        "location": "27647 Reba Ford",
+        "contact": "Grace_Armstrong59@yahoo.com",
+        "tags": "N/A"
+      }
+    
 }

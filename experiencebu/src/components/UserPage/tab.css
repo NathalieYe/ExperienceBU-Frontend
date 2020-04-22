@@ -1,0 +1,62 @@
+.itme {
+    background-color: #ECEADF;
+    margin-left: 2vw;
+    width: 92vw;
+    border-left-width: 4vw;
+    border-left-style: solid;
+    border-color: #ECEADF;
+}
+
+.itevent {
+    background-color: #ECEADF;
+    margin-left: 2vw;
+    width: 92vw;
+}
+
+.name {
+    font-family: 'Rubik', sans-serif;
+    font-size: 34px;
+    color: #286A6A;
+}
+
+.eventtabname {
+    font-family: 'Rubik', sans-serif;
+    font-size: 34px;
+    color: #286A6A;
+    text-indent: 4vw;
+}
+
+.subhead {
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    color: #286A6A;
+}
+
+.propic {
+    height: 180px;
+}
+
+.clubpic {
+    height: 100px;
+}
+
+.clubtabname {
+    font-family: 'Rubik', sans-serif;
+    line-height: 100px;
+    font-size: 20px;
+    font-weight: 300;
+    vertical-align: middle;
+    text-indent: 1vw;
+}
+
+.swit {
+    margin-top: 40px;
+}
+
+.smspace {
+    height: 2vh;
+}
+
+.space {
+    height: 10vh;
+}

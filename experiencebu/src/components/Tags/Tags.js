@@ -42,7 +42,6 @@ class ControlledCheckbox extends React.Component {
           label="Main Category 1"
           isChecked={this.state.check1}
           onChange={this.handleChange}
-          aria-label="controlled checkbox example"
           id="check-1"
           name="check1"
         />
@@ -51,7 +50,6 @@ class ControlledCheckbox extends React.Component {
           label="Sub Tag 1"
           isChecked={this.state.check2}
           onChange={this.handleChange}
-          aria-label="controlled checkbox example"
           id="check-2"
           name="check2"
         />
@@ -60,7 +58,6 @@ class ControlledCheckbox extends React.Component {
           label="Sub Tag 2"
           isChecked={this.state.check3}
           onChange={this.handleChange}
-          aria-label="controlled checkbox example"
           id="check-3"
           name="check3"
         />
@@ -69,7 +66,6 @@ class ControlledCheckbox extends React.Component {
           label="Main Category 2"
           isChecked={this.state.check4}
           onChange={this.handleChange}
-          aria-label="controlled checkbox example"
           id="check-4"
           name="check4"
         />

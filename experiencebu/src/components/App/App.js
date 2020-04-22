@@ -12,6 +12,7 @@ import clubPage from "../../paths/clubPage.js"
 import eventInfoPage from "../../paths/eventInfoPage.js"
 import homePage from "../../paths/homePage.js"
 import eventPage from "../../paths/eventPage.js"
+import userinfoPage from "../../paths/userinfoPage.js"
 
 
 class App extends React.Component {
@@ -25,6 +26,9 @@ class App extends React.Component {
           </Route>
 
           <Route path="/eventPage" component={eventPage}>
+          </Route>
+
+          <Route path="/userinfoPage" component={userinfoPage}> 
           </Route>
 
         {/*Dynamic Routes*/}
