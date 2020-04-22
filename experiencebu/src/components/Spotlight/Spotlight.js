@@ -68,6 +68,15 @@ export default class Spotlight extends React.Component {
       }
       return "/clubInfoPage"
     }
+    
+
+    clubName(clubs) {
+      var Arr = clubs.clubs
+      if (Arr.length != 0) {
+        return Arr[0].name
+      }
+      return "Loading"
+    }
   
 
     render() {
@@ -77,7 +86,7 @@ export default class Spotlight extends React.Component {
     <GridItem span={4} rowSpan={4}>
       <img className='image' src={this.image(this.state)}/>
     </GridItem>
-    <GridItem span={7} className='clubname'> ClubName </GridItem> 
+    <GridItem span={7} className='clubname'> {this.clubName(this.state)} </GridItem> 
     <GridItem span={7} rowSpan={2}>
       {this.description(this.state)}
     </GridItem>
