@@ -17,18 +17,11 @@ export default class ClubInfo extends React.Component {
     
     
   }
-
-  /*
-  const clubName = this.props.props.match.params.name
-  console.log(clubName) 
-  console.log(this.state)
-  console.log(this.props)
-  */
   
   async componentWillMount() {
       //console.log("ComponentWillMount is called and data is being fetched")
       //const response = await fetch(`http://localhost:5000/queryClub/${this.clubName}`);
-      const response = await fetch(`http://localhost:5000/clubs`);
+      const response = await fetch(`http://localhost:4100/clubs`);
       const json = await response.json();
       this.setState({ club: json });
       console.log("Look Here")

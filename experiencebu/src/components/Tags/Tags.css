@@ -12,3 +12,12 @@
     margin-bottom: 5px;
     vertical-align: middle;
 }
+
+.tagheader {
+    font-family: 'Rubik', 'san-serif';
+    color: white;
+    text-indent: 1vw;
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 5px;
+}

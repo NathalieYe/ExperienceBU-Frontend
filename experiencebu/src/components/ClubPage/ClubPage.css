@@ -15,6 +15,11 @@
     margin-top: var(--margin-top);
 }
 
+.spaceleft {
+    margin-left: 3vw;
+    margin-bottom: 2vw;
+}
+
 .headert{
     margin-top: 2vh;
     margin-bottom: 3vh;

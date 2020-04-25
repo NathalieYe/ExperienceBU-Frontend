@@ -18,12 +18,14 @@ import {
   Link
 } from "react-router-dom";
 import logo from './logo.png';
+import { GoogleLogin } from 'react-google-login';
 
 
 class NavHorizontalList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isSignedIn: false,
       activeItem: 0
     };
     this.onSelect = result => {
@@ -32,8 +34,22 @@ class NavHorizontalList extends React.Component {
       });
     };
   }
-  // ExperienceBU HOME EVENTS ORGANIZATIONS  Log In
   render() {
+    const responseGoogle = (response) => {
+      console.log(response);
+    }
+    const login = (
+      <GoogleLogin
+      clientId="545236115133-92efvfr2i30dc8n3701jsoh4b7h7ftj3.apps.googleusercontent.com"
+      render={renderProps => (
+        <button className='loginbutton' onClick={renderProps.onClick} disabled={renderProps.disabled}>Login</button>
+      )}  
+      buttonText="Login"
+      onSuccess={responseGoogle}
+      onFailure={responseGoogle}
+      cookiePolicy={'single_host_origin'}
+      />
+    );
     const { activeItem } = this.state;
     const nav = (
       <Nav onSelect={this.onSelect}>
@@ -65,7 +81,10 @@ class NavHorizontalList extends React.Component {
           <NavItem></NavItem>
           <NavItem></NavItem>
           <NavItem></NavItem>
-          <NavItem className='username'> Log In </NavItem>
+          <NavItem className='username'> 
+            {login}
+            {document.getElementById('googleButton')}
+          </NavItem>
         </NavList>
         </div>
       </Nav>
