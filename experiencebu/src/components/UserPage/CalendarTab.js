@@ -1,7 +1,7 @@
 import React from 'react';
 import './tab.css';
 import { Grid, GridItem} from '@patternfly/react-core';
-import Calendar from '../EventPage/Calendar.js';
+import Calendar from '../EventPage/Calendar/Calendar.js';
 
 export default class CalendarTab extends React.Component {
     render() {

@@ -4,7 +4,22 @@ import {Card, CardHeader, CardBody
 } from '@patternfly/react-core';
 
 export default class EventCard extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            event: {}
+        }
+        
+    }
+
+    async componentWillMount() {
+        this.setState({ event: this.props.props });
+    }
+
+
     render() {
+        if (this.props !== undefined && this.props.props !== undefined) { this.event = this.props.props; }
+
         return (
             <Card className='resultcard'> 
                 <CardHeader className='eventit'> Event Name </CardHeader>

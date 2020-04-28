@@ -5,13 +5,8 @@ import "./Spotlight.css"
 import Description from "./Description.js"
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link
 } from "react-router-dom";
-
-// console.log(this.state) 
-//console.log(this.state.clubs[0].description)
 
 
 export default class Spotlight extends React.Component {
@@ -24,26 +19,13 @@ export default class Spotlight extends React.Component {
 
    async componentWillMount() {
       console.log("ComponentWillMount is called and data is being fetched")
-      const response = await fetch(`http://localhost:4000/clubs`);
+      const response = await fetch(`http://127.0.0.1:8000/api/organizations/`);
       const json = await response.json();
       console.log("setState called")
       this.setState({ clubs: json });
       console.log("setState is finished")
   }
     
-/*
-    renderMyData() {
-      console.log("fetched called")
-      fetch('http://localhost:4000/clubs')
-      .then(res => res.json())
-      .then((data) => {
-        console.log("Data has been fetched")
-        this.setState({ clubs: data })
-       
-      })
-      .catch(console.log)
-    }
-  */
     description(clubs) {
       var Arr = clubs.clubs
       if (Arr.length != 0) {
@@ -64,7 +46,7 @@ export default class Spotlight extends React.Component {
     linkto(clubs) {
       var Arr = clubs.clubs
       if (Arr.length != 0) {
-        return `/clubInfoPage/${Arr[0].name}`
+        return `/clubInfoPage/${Arr[0].id}`
       }
       return "/clubInfoPage"
     }

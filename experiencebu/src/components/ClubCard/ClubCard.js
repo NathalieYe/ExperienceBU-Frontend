@@ -26,16 +26,15 @@ export default class ClubCard extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         if (this.props !== undefined && this.props.props !== undefined) { this.club = this.props.props; }
 
     return (
-        <Link to={`/clubInfoPage/${this.club.name}`}> 
+        <Link to={`/clubInfoPage/${this.club.id}`}> 
         <Card>
             {console.log("ClubCard is called")}
             <div className='item'>
             <CardHead>
-            <img src={logo} className='img' style={{ height: '18vw' }}/>
+            <img src={this.club.picture} className='img' style={{ height: '18vw' }}/>
             </CardHead> 
             <CardHeader className='caption'> {this.club.name} </CardHeader>
             </div>

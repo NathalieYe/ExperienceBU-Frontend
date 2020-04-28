@@ -3,7 +3,27 @@ import { Grid, GridItem, Button } from '@patternfly/react-core';
 import './EventInfo.css';
 import banner from "../Spotlight/event.jpg"
 
+
 export default class EventInfo extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      event: {}
+    }
+    
+    
+  }
+
+    
+  async componentWillMount() {
+    const response = await fetch(`http://127.0.0.1:8000/api/events/0`);
+    const json = await response.json();
+    this.setState({ event: json });
+}
+
+  
     render() {
         return (
             <Grid className='infogrid'>
@@ -11,26 +31,26 @@ export default class EventInfo extends React.Component {
             <i class="fas fa-chevron-left"></i> Go back to Events 
     </Button>{' '} </GridItem>
             <GridItem span={7} className='headert'>
-              Habitat for Humanity Fundraiser Event 
+              {this.state.event.name}
             </GridItem>
             <GridItem span={4} rowSpan={3} className='botpadding'>
-              <img src = {banner}/> 
+              <img src = {this.state.event.picture}/> 
             </GridItem>
             <GridItem span={7} className='subheading'> Event Description </GridItem>
-            <GridItem span={6} rowSpan={5} className='topmargin'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <GridItem span={6} rowSpan={5} className='topmargin'> {this.state.event.description}
             </GridItem>
             <GridItem span={7}> </GridItem>
-            <GridItem span={5} rowSpan={0} > Time: 2/3 Wednesday, 6-7 pm </GridItem>
+            <GridItem span={5} rowSpan={0} > </GridItem>
+            <GridItem span={7}> </GridItem> {this.state.event.description}
+            <GridItem span={5} rowSpan={0} >{this.state.event.location} {this.state.event.time} </GridItem>
             <GridItem span={7}> </GridItem>
-            <GridItem span={5} rowSpan={0} >Location: Mugar Library, 3rd Floor, Room 305</GridItem>
-            <GridItem span={7}> </GridItem>
-            <GridItem span={5} className='botpadding'> Affiliation: Habitat for Humanity </GridItem>
+            <GridItem span={5} className='botpadding'> {this.state.event.affiliation} </GridItem>
             <GridItem span={7}> </GridItem>
             <GridItem span={5} className='italic'> Have questions? </GridItem>
             <GridItem span={7}> </GridItem>
             <GridItem span={5} className='bold'> CONTACT INFORMATION </GridItem>
             <GridItem span={7}> </GridItem>
-            <GridItem span={5} className='botpadding'> Nathalie Ye, nye@bu.edu </GridItem>
+            <GridItem span={5} className='botpadding'> {this.state.event.contact} </GridItem>
             <GridItem span={7}> </GridItem>
             <GridItem span={1} className='botmargin'> <Button isBlock>RSVP</Button> </GridItem>
 

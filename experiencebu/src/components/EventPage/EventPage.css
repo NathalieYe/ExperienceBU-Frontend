@@ -7,7 +7,7 @@
 
 .sidebar {
     width: 800px;
-    height: 200vh;
+    height: 250vh;
     background-color: #2DB095;
 }
 
@@ -27,7 +27,7 @@
 .card{
     background-color: #ECEADF;
     border-radius: 20px;
-    width: 18vw;
+    width: 20vw;
     text-indent: 20px;
     font-family: 'Rubik', sans-serif;
     font-weight: 300;

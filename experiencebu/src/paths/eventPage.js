@@ -5,7 +5,7 @@ import '@patternfly/react-core/dist/styles/base.css';
 import Footer from "../components/Footer/footer.js"
 import EventPage from "../components/EventPage/EventPage.js"
 
-class clubInfoPage extends React.Component {
+class eventInfoPage extends React.Component {
   render() {
     const header = {
       height:"60px",
@@ -22,5 +22,5 @@ class clubInfoPage extends React.Component {
   }
 }
 
-export default clubInfoPage;
+export default eventInfoPage;
 

@@ -9,70 +9,119 @@ import _ from "lodash"
 export default class ClubPage extends React.Component {
   constructor(props) {
     super(props);
+    this.changeTags = this.changeTags.bind(this)
     //isNavOpen:true,
     this.state = {
       clubs: {},
       showRecItems: 3,
-      showAllOrg: 5
+      showAllOrg: 5,
+      tags: [] 
     };
     
-    /*
-    this.onNavToggle = () => {
-      this.setState({
-        isNavOpen: !this.state.isNavOpen
-        console.log(this.state)
-      });
-    };
-    */
   }
 
 
   
   async componentWillMount() {
-    console.log("ComponentDidMount called")
-    const response = await fetch(`http://localhost:4100/clubs`);
+    const response = await fetch(`http://127.0.0.1:8000/api/organizations/`);
     const json = await response.json();
-    console.log("The state is set")
     this.setState({ clubs: json });
   }
 
-  mapClubsToCard = (ClubOn) => {
-    console.log("mapClubsToCard is called")
-    return (
-      <FlexItem>
-      <Card props={ClubOn}></Card>              
-    </FlexItem>
-    )
+  changeTags = (boolean, newTags) => {
+    let currentTags = this.state.tags
+    if (boolean){
+      //let newTagList = _.union(currentTags,[newTags])
+      currentTags = _.union(currentTags,[newTags])
+      if (newTags == "Performance Arts") {
+        currentTags = _.union(currentTags,["Dance","Music","Theatre"])
+      }
+      if (newTags == "Academic & Professional") {
+        currentTags = _.union(currentTags,["Business","CAS Subjects","Engineering", "Law", "Technological", "Others"])
+      }
+      this.setState({tags: currentTags});
+    }
+    else{
+      //let newTagList = _.without(currentTags, newTags)
+      currentTags = _.without(currentTags, newTags)
+      if (newTags == "Academic & Professional") {
+        currentTags = _.without(currentTags,"Business")
+        currentTags = _.without(currentTags,"CAS Subjects")
+        currentTags = _.without(currentTags,"Engineering")
+        currentTags = _.without(currentTags,"Law")
+        currentTags = _.without(currentTags,"Technological")
+        currentTags = _.without(currentTags,"Others")
+      }
+      if (
+        (_.isEmpty(_.intersection(currentTags,["Business"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["CAS Subjects"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Engineering"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Law"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Technological"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Others"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Business","CAS Subjects","Engineering", "Law", "Technological", "Others"])))
+      ) {
+        currentTags = _.without(currentTags,"Academic & Professional")
+      }
+      if (newTags == "Performance Arts") {
+        currentTags = _.without(currentTags,"Theatre")
+        currentTags = _.without(currentTags,"Music")
+        currentTags = _.without(currentTags,"Dance")
+      }
+      if (
+        (_.isEmpty(_.intersection(currentTags,["Dance","Music","Theatre"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Dance"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Music"]))) ||
+        (_.isEmpty(_.intersection(currentTags,["Theatre"])))
+      ){
+        currentTags = _.without(currentTags,"Performance Arts")
+      }
+      this.setState({tags: currentTags})
+    }
   }
 
-  callMappingFunction = (Array, NumbRequired) => {
-    for (let i=0; i<NumbRequired; i++ ){
-      console.log("MappingFunction is called")
-      console.log(`i is ${i}`)
-      console.log(this.state.clubs[i])
-      return this.mapClubsToCard(this.state.clubs[i]);
-    }
-  } 
-  
+  checkTags = (club) => {
+    console.log(club)
+    let clubTagArray = club.tags.split(/, | - /)
+    console.log(clubTagArray)
+    let hasIntersection = _.intersection(clubTagArray, this.state.tags)
+    console.log(hasIntersection)
+    let boolean = _.isEmpty(hasIntersection)
+    console.log(boolean)
+    console.log(!boolean)
+    return !boolean
+  }
+
     render() {
       //const { isNavOpen } = this.state;
       var card = "";
       var RecCardList = ""
       var AllOrgList = ""
-      if (_.isEmpty(this.state.clubs) !== true) {
+      if ((_.isEmpty(this.state.tags) !== true) && (_.isEmpty(this.state.clubs) !== true)) {
+        RecCardList = this.state.clubs.slice(0, this.state.showRecItems).map(club => {
+          return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
+        });
+          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).map(club => {
+          if (this.checkTags(club))
+            return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
+        });
+        
+      }
+      else if (_.isEmpty(this.state.clubs) !== true) {
           RecCardList = this.state.clubs.slice(0, this.state.showRecItems).map(club => {
           return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
-        AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).map(club => {
+          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).map(club => {
           return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
-
       }
+  
+
 
       const PageNav = (
       <Nav className='sidebar'>
         <Bar></Bar>
-        <Tags></Tags>
+        <Tags action={this.changeTags}></Tags>
       </Nav>
       )
     
@@ -88,49 +137,11 @@ export default class ClubPage extends React.Component {
             <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
                 {RecCardList}
             </Flex>
-                {/*
-               
-                  <FlexItem>
-                    <Card></Card>              
-                  </FlexItem>
-                  <FlexItem>
-                    <Card></Card>              
-                  </FlexItem>
-                  <FlexItem>
-                    <Card></Card>              
-                  </FlexItem>
-                */}
-                
 
             <Text className='headert'>All Clubs and Organization</Text>
             <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
               {AllOrgList}
             </Flex>
-            {/* 
-            <Flex breakpointMods={[{modifier: FlexModifiers.column}]}>
-            <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-space-between"]}]}>
-                <FlexItem>
-                  <Card></Card>              
-                  </FlexItem>
-                <FlexItem>
-                  <Card></Card>              
-                </FlexItem>
-                <FlexItem>
-                  <Card></Card>              
-                </FlexItem>
-            </Flex>
-            <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-space-between"]}]}>
-                <FlexItem>
-                  <Card></Card>              
-                </FlexItem>
-                <FlexItem>
-                  <Card></Card>              
-                </FlexItem>
-                <FlexItem>
-                  <Card></Card>              
-                </FlexItem>
-            </Flex>
-            </Flex> */}
 
         </PageSection>
           </Page>

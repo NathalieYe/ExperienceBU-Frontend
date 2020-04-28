@@ -5,6 +5,7 @@ import "./Tags.css"
 class ControlledCheckbox extends React.Component {
   constructor(props) {
     super(props);
+    this.makeChange = this.makeChange.bind(this)
     this.state = {
       check1: false, check2: false, check3: false, check4: false, check5: false, check6: false,
       check7: false, check8: false, check9: false, check10: false, check11: false, check12: false,
@@ -16,6 +17,7 @@ class ControlledCheckbox extends React.Component {
       const value = target.type === 'checkbox' ? target.checked : target.value;
       const name = target.name;
       this.setState({ [name]: value });
+      this.makeChange(value,target.labels[0].innerText)
     };
   }
 
@@ -57,6 +59,12 @@ class ControlledCheckbox extends React.Component {
     }
   }
 
+  makeChange = (boolean, NewTag) => {
+    this.props.action(boolean, NewTag)
+    console.log("ONCLICK PASSES")
+  }
+
+  
 
   render() {
     return (
@@ -64,7 +72,7 @@ class ControlledCheckbox extends React.Component {
         <Text className='tagheader'> Tags </Text>
         <Checkbox
           className='tags'
-          label="Academic and Professional"
+          label="Academic & Professional"
           isChecked={this.state.check1}
           onChange={this.handleChange}
           id="check-1"
@@ -136,7 +144,7 @@ class ControlledCheckbox extends React.Component {
         />
         <Checkbox
           className='tags'
-          label="Governments and Councils"
+          label="Governments & Councils"
           isChecked={this.state.check10}
           onChange={this.handleChange}
           id="check-10"
