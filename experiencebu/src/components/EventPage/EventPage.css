@@ -9,7 +9,7 @@
 
 .sidebarrr {
     width: 15vw;
-    height: 297vh;
+    height: 303vh;
     background-color: #358D7D;
     position: fixed;
     z-index: 1;
@@ -27,7 +27,7 @@
     margin-top: 2vh;
     margin-bottom: 3vh;
     height: 50px;
-    font-size: 36px; 
+    font-size: 24px; 
     font-weight: 300;
     font: 'Rubik', sans-serif;
 }
@@ -41,6 +41,11 @@
     font-weight: 300;
     color: #286A6A;
 }
+
+.pf-c-card__body {
+    line-height: 24px;
+}
+
 
 .eventit{
     margin-top: -15px;
@@ -70,4 +75,13 @@
 
 .blackfont {
     color: #286A6A;
+}
+
+.pf-c-title {
+    text-decoration: none;
+}
+
+.resultcard {
+    border-radius: 20px;
+    padding: 1%;
 }

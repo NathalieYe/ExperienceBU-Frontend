@@ -13,6 +13,7 @@ import eventInfoPage from "../../paths/eventInfoPage.js"
 import homePage from "../../paths/homePage.js"
 import eventPage from "../../paths/eventPage.js"
 import userinfoPage from "../../paths/userinfoPage.js"
+import loggedinPage from "../../paths/loggedinPage"
 
 
 class App extends React.Component {
@@ -29,6 +30,9 @@ class App extends React.Component {
           </Route>
 
           <Route path="/userinfoPage" component={userinfoPage}> 
+          </Route>
+
+          <Route path="/loggedinPage" component={loggedinPage}>
           </Route>
 
         {/*Dynamic Routes*/}

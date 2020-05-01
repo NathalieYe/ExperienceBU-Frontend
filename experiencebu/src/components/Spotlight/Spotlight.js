@@ -32,7 +32,7 @@ export default class Spotlight extends React.Component {
         return Arr[0].description
       }
 
-      return <Text> Helloitme </Text>
+      return <Text> LOADING </Text>
     }
 
     image(clubs) {

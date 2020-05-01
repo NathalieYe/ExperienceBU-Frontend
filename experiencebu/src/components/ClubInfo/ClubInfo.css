@@ -22,8 +22,8 @@
     margin-bottom: 3vh;
     height: 50px;
     font-size: 30px; 
-    font-weight: 350;
-    color: black;
+    color: #286A6A;
+    font-weight: 500;
 }
 
 .botpadding {
@@ -47,4 +47,47 @@
     color: var(--font-color);
     font-family: var(--font);
     margin-top: var(--margintop);
+}
+
+.pf-c-button.pf-m-link {
+    color: #2D2926;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.pf-c-button.pf-m-link:hover {
+    color: #99978D;
+}
+
+.subheading {
+    color: #2D2926;
+    font-size: 16px;
+}
+
+.pf-m-5-row, .pf-m-5-col {
+    color: #2D2926;
+    font-size: 16px;
+}
+
+.pf-m-12-col {
+    color: #2D2926;
+}
+
+.pf-m-12-col:hover, .pf-c-title.pf-m-md:hover{
+    color: #99978D;
+    text-decoration: none;
+}
+
+.pf-c-button.pf-m-primary {
+    background-color: #358D7D;
+    font-size: 20px;
+    font-weight:500;
+}
+
+.pf-c-button:disabled {
+    background-color: #99978D;
+}
+
+.pf-c-card {
+    border-radius: 50%;
 }

@@ -27,13 +27,13 @@ export default class ClubInfo extends React.Component {
         <Tab className='atab' eventKey={0} title="PROFILE">
           <ProfileTab></ProfileTab>
         </Tab>
-        <Tab className='atab' eventKey={1} title="CALENDAR">
+        {/*<Tab className='atab' eventKey={1} title="CALENDAR">
           <CalendarTab></CalendarTab>
-        </Tab>
-        <Tab className='atab' eventKey={2} title="MY EVENTS">
+    </Tab> */}
+        <Tab className='atab' eventKey={1} title="MY EVENTS">
           <EventTab></EventTab>
         </Tab>
-        <Tab className='atab' eventKey={3} title="MY ORGANIZATIONS">
+        <Tab className='atab' eventKey={2} title="MY ORGANIZATIONS">
           <OrgTab></OrgTab>
         </Tab>
       </Tabs>

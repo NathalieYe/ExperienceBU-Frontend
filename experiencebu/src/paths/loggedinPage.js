@@ -1,12 +1,14 @@
 import React from 'react';
 import '../components/App/App.css';
 import LoggedInMast from '../components/MastHead/LoggedinMast.js';
-import Masthead from '../components/MastHead/MastHead.js';
 import '@patternfly/react-core/dist/styles/base.css';
+import Carousel from '../components/Carousel/Carousel.js';
+import '../components/Carousel/Carousel.css';
+import Spotlight from '../components/Spotlight/Spotlight.js'
+import "../components/Spotlight/Spotlight.css"
 import Footer from "../components/Footer/footer.js"
-import ClubPage from "../components/ClubPage/ClubPage.js"
 
-class clubPage extends React.Component {
+class homePage extends React.Component {
   render() {
     const header = {
       height:"60px",
@@ -16,12 +18,15 @@ class clubPage extends React.Component {
     return (
       <div>
         <LoggedInMast></LoggedInMast>
-        <ClubPage></ClubPage>
+        <div className="carouselbg">
+        <Carousel>
+        </Carousel>
+        </div>
+        <Spotlight></Spotlight>
         <Footer></Footer>
       </div>
     );
   }
 }
 
-export default clubPage;
-
+export default homePage;

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../components/App/App.css';
+import LoggedInMast from '../components/MastHead/LoggedinMast.js';
 import Masthead from '../components/MastHead/MastHead.js';
 import '@patternfly/react-core/dist/styles/base.css';
 import Footer from "../components/Footer/footer.js"
@@ -14,7 +15,7 @@ class userinfoPage extends React.Component {
     
     return (
       <div>
-        <Masthead></Masthead>
+        <LoggedInMast></LoggedInMast>
         <UserPage></UserPage>
       </div>
     );

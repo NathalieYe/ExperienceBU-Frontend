@@ -44,7 +44,7 @@ class EventInfo extends React.Component {
       if (this.state.isSignedIn) {
         if (!_.isEmpty(this.state.user)){
           if (this.state.rsvp) {
-            button = <Button isDisabled='true' isBlock> Going!</Button>;
+            button = <Button isDisabled='true' isBlock>Saved to My Events</Button>;
           }
           else {
             button = <Button onClick={this.handleClick} isBlock>Save to My Events</Button>;

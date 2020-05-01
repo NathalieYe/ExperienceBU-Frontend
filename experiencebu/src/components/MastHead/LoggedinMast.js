@@ -99,7 +99,6 @@ class NavHorizontalList extends React.Component {
     const { activeItem } = this.state;
     let nav = ""
     let logout = ''
-    if (this.state.isSignedIn == true) {
           nav = (
             <Nav onSelect={this.onSelect}>
               <div className='pf-c-page__header-nav'>
@@ -113,73 +112,54 @@ class NavHorizontalList extends React.Component {
                 <NavItem></NavItem>
                 <NavItem></NavItem>
                 <NavItem className='home'>
-                  <Link to="/">
+                <Link to={{
+                    pathname: '/',
+                    state: {
+                        fromNotifications: true
+                    }
+                }}>
                   HOME 
                   </Link>
                 </NavItem>
                 <NavItem className='events'> 
-                  <Link to="/eventPage"> 
+                <Link to={{
+                  pathname: '/eventPage',
+                  state: {
+                  fromNotifications: true
+                }
+                }}> 
                   EVENTS
                   </Link> 
                 </NavItem>
                 <NavItem className='organizations'> 
-                  <Link to="/clubPage"> 
+                <Link to={{
+                    pathname: '/clubPage',
+                    state: {
+                    fromNotifications: true
+                }
+                }}> 
                   ORGANIZATIONS 
                   </Link>
                 </NavItem>
-                <NavItem className='organizations'> 
-                  <Link to="/userInfoPage"> 
+                <NavItem className='events'> 
+                <Link to={{
+                    pathname: '/userInfoPage',
+                    state: {
+                    fromNotifications: true
+                 }
+                }}>
                   PROFILE
                   </Link>
                 </NavItem>
                 <NavItem></NavItem>
                 <NavItem></NavItem>
                 <NavItem className='username' onClick={this.handleClick}> 
-                  <Button className='username'> Logout </Button>
+                  <Link> Logout </Link>
                 </NavItem>
               </NavList>
               </div>
             </Nav>
-          )}
-    
-        else {
-            nav = (
-            <Nav onSelect={this.onSelect}>
-              <div className='pf-c-page__header-nav'>
-              <NavList  variant={NavVariants.horizontal} > 
-                <img src={logo} className='logo'/>
-                <Text className='title'> EXPERIENCE_ </Text>
-                <Text className='BU'> BU </Text>
-                <Text className='phrase'> Find the right events and organizations based on your schedule</Text>
-                <NavItem></NavItem>
-                <NavItem></NavItem>
-                <NavItem></NavItem>
-                <NavItem></NavItem>
-                <NavItem className='home'>
-                  <Link to="/">
-                  HOME 
-                  </Link>
-                </NavItem>
-                <NavItem className='events'> 
-                  <Link to="/eventPage"> 
-                  EVENTS
-                  </Link> 
-                </NavItem>
-                <NavItem className='organizations'> 
-                  <Link to="/clubPage"> 
-                  ORGANIZATIONS 
-                  </Link>
-                </NavItem>
-                <NavItem></NavItem>
-                <NavItem></NavItem>
-                <NavItem></NavItem>
-                <NavItem className='username' onClick={this.handleClick}> 
-                <a href="http://127.0.0.1:8000/accounts/google/login"> Login </a>
-                </NavItem>
-              </NavList>
-              </div>
-            </Nav>
-          )}
+          )
   
     return (
       <PageHeader topNav={nav} style={{ backgroundColor: 'rgb(255,255,255)' }} />

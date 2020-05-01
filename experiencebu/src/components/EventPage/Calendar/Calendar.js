@@ -11,11 +11,17 @@ export default class Calendar extends React.Component {
       this.state = {
         selections: [],
         events: {},
-        profile: {}
+        profile: {},
+        needToCall:true
       }
       this.handleChange = this.handleChange.bind(this);
-      this.handleEventsRequested = this.handleEventsRequested.bind(this);
+      this.handlePublicEventsRequested = this.handlePublicEventsRequested.bind(this);
       this.eventTimetoDate = this.eventTimetoDate.bind(this);
+      this.handleAllEvents=this.handleAllEvents.bind(this)
+      this.ifNeedCallback = 0
+      this.publicEvents = []
+      this.privateEvents = []
+      this.allEvents=[]
     }
 
     async componentWillMount() {
@@ -26,6 +32,7 @@ export default class Calendar extends React.Component {
       const json2 = await getSched.json();
       this.setState({ events: json, profile: json2 });
     }
+    
 
     eventTimetoDate = (event) => {
       let eventTime = event.time.split(/:|-| /) //split by - and space  
@@ -89,10 +96,39 @@ export default class Calendar extends React.Component {
      this.setState({ selections });
     }
 
-    handleEventsRequested({ start: s, end: e, calendarId, callback }) {
-      let events = [];
+    async handleAllEvents(callback) {
+      //await this.handlePublicEventsRequested(callback)
+      //await this.handlePrivateEventsRequested(callback)
+      this.handleBothEvents(callback.callback)
+    }
+
+    async handleBothEvents(callback) {
+      /*
+      const eventsPublic = await this.getPublicEvents();
+      const eventsPrivate = await this.getPrivateEvents();
+      const allEvents = _.union(eventsPublic,eventsPrivate)
+        if (this.ifNeedCallback) {
+         console.log("THIS SHOULD ONLY APPEAR ONCE")
+         this.ifNeedCallback = false;
+         callback(_.uniq(allEvents))}
+      }
+      */ 
+      let allEvents = this.state.allEvents
+      let boolean = this.ifNeedCallback > 2
+      if (boolean) {
+          const eventsPublic = await this.getPublicEvents();
+          const eventsPrivate = await this.getPrivateEvents();
+          allEvents = _.union(eventsPublic,eventsPrivate)
+          callback(allEvents)
+      }
+      this.ifNeedCallback = this.ifNeedCallback + 1
+        
+      } 
+        
+
+    getPublicEvents = () => {
+      let events = []
       if (!(_.isEmpty(this.state.events))){
-        console.log("do we even get here part 2?")
         for (let i = 0; i < 5; i++ ) {
           let eventTime = []
           eventTime = this.eventTimetoDate(this.state.events[i])
@@ -102,52 +138,56 @@ export default class Calendar extends React.Component {
             title: this.state.events[i].name,
             calendarId: 'public',
           });
-        
         }
       }
-    //  const latency = this.state.date_object;
-        callback(events)
-    //console.log(`Simulated latency for ${calendarId}`, latency);
-    /*setTimeout(() => {
-      callback(events);
-    }, latency); */
-
-    }
-
-    render() {
+      return events
+  }
+    getPrivateEvents = () => {
+      let events = []
       if (!(_.isEmpty(this.state.profile))){
         let schedule = this.state.profile[0].schedule
         schedule = schedule.replace(/'/g, "\"")
         schedule = schedule.replace(/{|}|\[|\]/g, "")
         let schelist = schedule.split(/\"title\"\: \"/)
-//      let sche = JSON.parse(schedule)
-        //console.log(schelist)
-        //console.log(schelist.length)
         let listlist = []
         for (let i = 1; i < schelist.length; i++) {
-          listlist[i] = schelist.split(/, /)
+          listlist[i] = schelist[i].split(/\"start\"\: |\"end\"\: /)
         }
-        console.log(listlist)
-//      let sche1 = schedule.split('title')
-//      console.log(sche1)
+        for (let i = 1; i < schelist.length; i++) {
+          listlist[i][0] = listlist[i][0].slice(0,-2).replace(/\"/g, "")
+          listlist[i][1] = listlist[i][1].split(/,|\"dateTime\"\: /)[1].replace(/\"/g, "").split(/-|T|:/)
+          listlist[i][2] = listlist[i][2].split(/,|\"dateTime\"\: /)[1].replace(/\"/g, "").split(/-|T|:/)
+        }
+        for (let i = 1; i < schelist.length; i++) {
+          events.push({
+            start: new Date(2020,5,Number(listlist[i][1][2]),Number(listlist[i][1][3]),Number(listlist[i][1][4]),0),
+            end: new Date(2020,5,Number(listlist[i][1][2]),Number(listlist[i][2][3]),Number(listlist[i][1][4]),0),
+            title: listlist[i][0],
+            calendarId: 'private' 
+          })
+        }
       }
+      return events
+    }
+
+   async handlePublicEventsRequested({callback}) {
+      const events = await this.getPublicEvents();
+      callback(events)
+    }
+    
+    async handlePrivateEventsRequested({callback}) {
+      const events = await this.getPrivateEvents();
+      callback(events)
+    }
+
+
+
+
+    render() {
+      //console.log(this.state.profile)
       const { selections, recurring } = this.state;
       const TIME_ZONE = 'America/New_York';
-      const calendars = [
-        {
-          id: 'public',
-          title: 'Event Schedule',
-          foregroundColor: '#ff00ff',
-          backgroundColor: '#f0f0f0',
-          selected: true
-        },
-        {
-          id: 'private',
-          title: 'My Schedule',
-          foregroundColor: '#666',
-          backgroundColor: '#f3f3f3',
-        },
-      ]
+
       /* 
         let name = ["","","","",""];
         let date = ["","","","",""];
@@ -161,11 +201,25 @@ export default class Calendar extends React.Component {
         <AvailableTimes
           className='rat-TimeSlot_component'
           timeConvention="24h"
-          timeZone={TIME_ZONE}
           weekStartsOn="monday"
-          calendars={calendars}
+          calendars={[
+            {
+              id: 'public',
+              title: 'public',
+              foregroundColor: '#ff00ff',
+              backgroundColor: '#f0f0f0',
+              selected: true
+            },
+            {
+              id: 'private',
+              title: 'private',
+              foregroundColor: '#666',
+              backgroundColor: '#f3f3f3',
+              selected: true
+            },
+          ]}
           onChange={this.handleChange}
-          onEventsRequested={this.handleEventsRequested}
+          onEventsRequested={this.handleAllEvents}
           height={800}
           recurring={false}
           availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']}

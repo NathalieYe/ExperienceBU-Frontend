@@ -1,5 +1,6 @@
 import React from 'react';
 import '../components/App/App.css';
+import LoggedInMast from '../components/MastHead/LoggedinMast.js';
 import Masthead from '../components/MastHead/MastHead.js';
 import '@patternfly/react-core/dist/styles/base.css';
 import {
@@ -18,7 +19,7 @@ class clubInfoPage extends React.Component {
     
     return (
       <div>
-        <Masthead></Masthead>
+         <LoggedInMast></LoggedInMast>
         <ClubInfo props={this.props}></ClubInfo>
         <Footer></Footer>
       </div>

@@ -5,8 +5,12 @@ import Bar from "../SearchBar/SearchBar.js"
 import Tags from "../Tags/Tags.js"
 import Card from "../ClubCard/ClubCard.js"
 import _ from "lodash"
+import {
+  Link, withRouter
+} from "react-router-dom";
 
-export default class ClubPage extends React.Component {
+
+class ClubPage extends React.Component {
   constructor(props) {
     super(props);
     this.changeTags = this.changeTags.bind(this)
@@ -14,7 +18,7 @@ export default class ClubPage extends React.Component {
     this.state = {
       clubs: {},
       showRecItems: 3,
-      showAllOrg: 5,
+      showAllOrg: 18,
       tags: [] 
     };
     
@@ -153,7 +157,7 @@ export default class ClubPage extends React.Component {
                 {RecCardList}
             </Flex>
 
-            <Text className='headert'> Organizations (A-Z) </Text>
+            <Text className='headert'> Organizations </Text>
             <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
               {AllOrgList}
             </Flex>
@@ -165,4 +169,5 @@ export default class ClubPage extends React.Component {
       
     }
 }
-    
+
+export default withRouter(ClubPage);

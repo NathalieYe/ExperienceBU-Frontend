@@ -9,12 +9,13 @@ import Tags from "../Tags/Tags.js"
 import EventCard from "./EventCard.js"
 import _ from "lodash"
 import {
-  Link
+  Link, withRouter
 } from "react-router-dom";
 
-export default class EventPage extends React.Component {
+class EventPage extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
     this.backUrl = '/eventInfoPage'
     
     this.state = {
@@ -206,7 +207,7 @@ export default class EventPage extends React.Component {
             <Text className='headert'> Event Calendar </Text>
             <Calendar></Calendar>
 
-            <Text className='headert'> {`Events Results: ${Object.keys(numEvents).length}`} </Text>
+            <Text className='headert'> {`Events Results (${Object.keys(numEvents).length})`} </Text>
             {allEvents}
 
         </PageSection>
@@ -214,8 +215,11 @@ export default class EventPage extends React.Component {
           
         ); 
       }
-  return ( <div> "Loading" </div>
+  return ( <div> </div>
     )
     }
 }
     
+
+export default withRouter(EventPage);
+

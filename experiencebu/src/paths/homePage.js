@@ -1,5 +1,6 @@
 import React from 'react';
 import '../components/App/App.css';
+import LoggedInMast from '../components/MastHead/LoggedinMast.js';
 import Masthead from '../components/MastHead/MastHead.js';
 import '@patternfly/react-core/dist/styles/base.css';
 import Carousel from '../components/Carousel/Carousel.js';
@@ -17,7 +18,7 @@ class homePage extends React.Component {
     
     return (
       <div>
-        <Masthead></Masthead>
+        <LoggedInMast></LoggedInMast>
         <div className="carouselbg">
         <Carousel>
         </Carousel>
