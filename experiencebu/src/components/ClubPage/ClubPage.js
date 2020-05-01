@@ -98,24 +98,39 @@ export default class ClubPage extends React.Component {
       var RecCardList = ""
       var AllOrgList = ""
       if ((_.isEmpty(this.state.tags) !== true) && (_.isEmpty(this.state.clubs) !== true)) {
-        RecCardList = this.state.clubs.slice(0, this.state.showRecItems).map(club => {
+        RecCardList = this.state.clubs.slice(0, this.state.showRecItems).sort(function (x, y) {
+          let a = x.name.toUpperCase(),
+              b = y.name.toUpperCase();
+          return a == b ? 0 : a > b ? 1 : -1;
+      }).map(club => {
           return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
-          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).map(club => {
+          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).sort(function (x, y) {
+            let a = x.name.toUpperCase(),
+                b = y.name.toUpperCase();
+            return a == b ? 0 : a > b ? 1 : -1;
+        }).map(club => {
           if (this.checkTags(club))
             return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
         
       }
       else if (_.isEmpty(this.state.clubs) !== true) {
-          RecCardList = this.state.clubs.slice(0, this.state.showRecItems).map(club => {
+          RecCardList = this.state.clubs.slice(0, this.state.showRecItems).sort(function (x, y) {
+            let a = x.name.toUpperCase(),
+                b = y.name.toUpperCase();
+            return a == b ? 0 : a > b ? 1 : -1;
+        }).map(club => {
           return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
-          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).map(club => {
+          AllOrgList = this.state.clubs.slice(0, this.state.showAllOrg).sort(function (x, y) {
+            let a = x.name.toUpperCase(),
+                b = y.name.toUpperCase();
+            return a == b ? 0 : a > b ? 1 : -1;
+        }).map(club => {
           return <FlexItem className='spaceleft'>  <Card props={club}> </Card> </FlexItem>;
         });
       }
-  
 
 
       const PageNav = (
@@ -138,7 +153,7 @@ export default class ClubPage extends React.Component {
                 {RecCardList}
             </Flex>
 
-            <Text className='headert'>All Clubs and Organization</Text>
+            <Text className='headert'> Organizations (A-Z) </Text>
             <Flex breakpointMods={[{modifier: FlexModifiers["justify-content-flex-start"]}]}>
               {AllOrgList}
             </Flex>

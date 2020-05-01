@@ -1,5 +1,5 @@
 .nested {
-    margin-left: 4vw;
+    margin-left: 3vw;
     margin-bottom: 5px;
     --pf-c-check__label--Color: white;
     --pf-c-check__label--disabled--Color: white;
@@ -8,16 +8,16 @@
 .tags {
     --pf-c-check__label--Color: white;
     --pf-c-check__label--disabled--Color: white;
-    margin-left: 3vw;
+    margin-left: 2vw;
     margin-bottom: 5px;
     vertical-align: middle;
 }
 
 .tagheader {
     font-family: 'Rubik', 'san-serif';
-    color: white;
+    color: #FDFDFD;
     text-indent: 1vw;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 5px;
 }

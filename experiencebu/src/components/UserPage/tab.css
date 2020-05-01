@@ -17,6 +17,11 @@
     font-family: 'Rubik', sans-serif;
     font-size: 34px;
     color: #286A6A;
+    text-indent: 10px;
+}
+
+.textindent {
+    text-indent: 10px;
 }
 
 .eventtabname {
@@ -33,7 +38,9 @@
 }
 
 .propic {
+    border-radius: 50%;
     height: 180px;
+    width: 180px;
 }
 
 .clubpic {

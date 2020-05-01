@@ -1,6 +1,7 @@
 :root {
     --tabs_color: green;
     --pf-global--active-color--100: green;
+    --pad-top: 180vh;
 }
 
 .pf-c-tabs {

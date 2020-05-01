@@ -6,17 +6,18 @@
 }
 
 .pf-c-input-group{
-    --pf-global--BorderColor--100: var(--hover-color);
-    --pf-global--link--Color--hover: var(--hover-color);
+    --pf-global--BorderColor--100:var(--hover-color);
+    --pf-global--link--Color--hover: var(--hover-color);;
     background-color: white;
-    width: 260px;
+    width: 17vw;
     border-radius: 30px;
-    margin-top: 2vh;
+    margin-top: 1vh;
     margin-bottom: 2vh;
-    margin-left: 2vh;
+    margin-left: 1vw;
 }
-
+/*var(--hover-color); */
 .icon{
     margin-left: 0.5vw;
     margin-right: 0.5vw;
+    color: #358D7D;
 }

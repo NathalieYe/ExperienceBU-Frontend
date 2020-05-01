@@ -1,18 +1,26 @@
 :root {
     --margin-left: 4vw;
-    --font-color: #878B91;
+    --font-color: #6c7075;
     --font: 'Rubik', sans-serif;
     --margin-top: -20px;
+    --sidebar-width: 20vw;
+    --z-index-var: 1;
 }
 
-.sidebar {
-    width: 800px;
-    height: 250vh;
-    background-color: #2DB095;
+.sidebarrr {
+    width: 15vw;
+    height: 297vh;
+    background-color: #358D7D;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
 }
 
-.page {
+.pf-c-page{
     margin-top: var(--margin-top);
+    --pf-c-page__sidebar--md--Width: var(--sidebar-width);
 }
 
 .headert{
@@ -58,4 +66,8 @@
     color: black;
     margin-top: 8px;
     margin-bottom: 2vh;
+}
+
+.blackfont {
+    color: #286A6A;
 }

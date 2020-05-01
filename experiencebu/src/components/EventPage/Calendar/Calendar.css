@@ -1,0 +1,18 @@
+:root {
+
+}
+
+.calwrapper {
+    margin-left: 5vw;
+    width: 70vw
+}
+
+.rat-TimeSlot_component{
+    color: black;
+    background-color: #cfffe5;
+}
+
+.rat-TimeSlot_frozen{
+    color: black;
+    background:wheat;
+}

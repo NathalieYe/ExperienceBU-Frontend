@@ -1,6 +1,9 @@
 import React from 'react';
 import AvailableTimes from 'react-available-times';
-import _ from "lodash"
+import _ from "lodash";
+import './Calendar.css'
+import { withRouter } from 'react-router-dom'
+
 
 export default class Calendar extends React.Component {
     constructor(props) {
@@ -8,6 +11,7 @@ export default class Calendar extends React.Component {
       this.state = {
         selections: [],
         events: {},
+        profile: {}
       }
       this.handleChange = this.handleChange.bind(this);
       this.handleEventsRequested = this.handleEventsRequested.bind(this);
@@ -17,11 +21,11 @@ export default class Calendar extends React.Component {
     async componentWillMount() {
       console.log("ComponentDidMount called")
       const response = await fetch(`http://127.0.0.1:8000/api/events/`);
+      const getSched = await fetch(`http://127.0.0.1:8000/api/profile/`);
       const json = await response.json();
-      this.setState({ events: json }, () => console.log(this.state.events));
+      const json2 = await getSched.json();
+      this.setState({ events: json, profile: json2 });
     }
-
-    
 
     eventTimetoDate = (event) => {
       let eventTime = event.time.split(/:|-| /) //split by - and space  
@@ -78,19 +82,15 @@ export default class Calendar extends React.Component {
       if (eventDate[2] == '31st') {date = 31}
       let startTime = new Date(2020,5,date,starthour,startmin,0) // Year, month, date, hour, minute, second
       let endTime = new Date(2020,5,date,endhour,endmin,0)
-      console.log(startTime, "JASNDLKAJSN", endTime)
       return [startTime,endTime]
     }
 
     handleChange(selections) {
-      this.setState({ selections });
+     this.setState({ selections });
     }
 
     handleEventsRequested({ start: s, end: e, calendarId, callback }) {
-      console.log("do we even get here?")
       let events = [];
-      console.log("LOOK HERE")
-      console.log(!(_.isEmpty(this.state.events)))
       if (!(_.isEmpty(this.state.events))){
         console.log("do we even get here part 2?")
         for (let i = 0; i < 5; i++ ) {
@@ -106,7 +106,6 @@ export default class Calendar extends React.Component {
         }
       }
     //  const latency = this.state.date_object;
-        console.log(events)
         callback(events)
     //console.log(`Simulated latency for ${calendarId}`, latency);
     /*setTimeout(() => {
@@ -116,8 +115,23 @@ export default class Calendar extends React.Component {
     }
 
     render() {
+      if (!(_.isEmpty(this.state.profile))){
+        let schedule = this.state.profile[0].schedule
+        schedule = schedule.replace(/'/g, "\"")
+        schedule = schedule.replace(/{|}|\[|\]/g, "")
+        let schelist = schedule.split(/\"title\"\: \"/)
+//      let sche = JSON.parse(schedule)
+        //console.log(schelist)
+        //console.log(schelist.length)
+        let listlist = []
+        for (let i = 1; i < schelist.length; i++) {
+          listlist[i] = schelist.split(/, /)
+        }
+        console.log(listlist)
+//      let sche1 = schedule.split('title')
+//      console.log(sche1)
+      }
       const { selections, recurring } = this.state;
-      {console.log("do we even get here part 3?")}
       const TIME_ZONE = 'America/New_York';
       const calendars = [
         {
@@ -143,14 +157,16 @@ export default class Calendar extends React.Component {
         time = [this.state.events[0].time,this.state.events[1].time,this.state.events[2].time,this.state.events[3].time,this.state.events[4].time];
       */
       return (
+        <div className='calwrapper'>
         <AvailableTimes
+          className='rat-TimeSlot_component'
           timeConvention="24h"
           timeZone={TIME_ZONE}
           weekStartsOn="monday"
           calendars={calendars}
           onChange={this.handleChange}
           onEventsRequested={this.handleEventsRequested}
-          height={600}
+          height={800}
           recurring={false}
           availableDays={['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']}
           availableHourRange={{ start: 8, end: 22 }}
@@ -170,7 +186,7 @@ export default class Calendar extends React.Component {
     { start: 'monday', end: 'friday' }
   ]} 
   */ 
-          />
+          /></div>
         )
     }
 }

@@ -19,7 +19,7 @@ class eventInfoPage extends React.Component {
       <div>
         <Masthead></Masthead>
         <EventInfo></EventInfo>
-        <Footer></Footer>
+        <Footer className='foota'></Footer>
       </div>
     );
   }

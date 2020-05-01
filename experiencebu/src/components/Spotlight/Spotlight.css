@@ -4,7 +4,7 @@
     font-family: 'Rubik', sans-serif;
     font-size: 26px; 
     font-weight: 300; 
-    text-indent: 5%;
+    text-indent: 2vw;
     color: black
 }
 
@@ -22,4 +22,37 @@
     text-decoration: underline;
     font-family: 'Rubik', sans-serif;
     font-size: 22px;
+}
+
+.pf-c-button.pf-m-link {
+    color: #2D2926;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.pf-c-button.pf-m-link:hover {
+    color: #99978D;
+}
+
+.headder {
+    color: #286A6A;
+    font-weight: 500;
+}
+
+.subheading {
+    color: #2D2926;
+    font-size: 16px;
+}
+
+.pf-m-5-row {
+    color: #2D2926;
+    font-size: 16px;
+}
+
+.pf-m-12-col {
+    color: #2D2926;
+}
+
+.pf-m-12-col:hover {
+    color: #99978D;
 }

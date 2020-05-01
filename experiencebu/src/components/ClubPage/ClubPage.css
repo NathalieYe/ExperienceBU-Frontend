@@ -1,18 +1,20 @@
 :root {
     --margin-left: 4vw;
-    --font-color: #878B91;
+    --font-color: #6c7075;
     --font: 'Rubik', sans-serif;
     --margin-top: -20px;
+    --sidebar-width: 20vw;
+}
+
+.pf-c-page{
+    margin-top: var(--margin-top);
+    --pf-c-page__sidebar--md--Width: var(--sidebar-width);
 }
 
 .sidebar {
-    width: 800px;
+    width: 15vw;
     height: 200vh;
-    background-color: #2DB095;
-}
-
-.page {
-    margin-top: var(--margin-top);
+    background-color: #358D7D;
 }
 
 .spaceleft {

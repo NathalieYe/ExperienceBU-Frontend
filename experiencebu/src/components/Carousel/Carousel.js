@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import './Carousel.css';
+import {
+  Link
+} from "react-router-dom";
 import _ from "lodash"
 
 
@@ -32,7 +35,7 @@ export default class MyCarousel extends Component {
 
     return (
         <Carousel
-        autoPlay={4000}
+        autoPlay={3000}
         animationSpeed={1000}
         itemWidth ={650}
         arrowLeft= {<i class="fas fa-chevron-left fa-3x"></i>}
@@ -42,9 +45,9 @@ export default class MyCarousel extends Component {
         centered
         dots
     >
-        <img src= {img1} /> 
-        <img src= {img2} />
-        <img src= {img3} />  
+        <Link to={`/eventInfoPage/2`}> <img src= {img1} /> </Link>
+        <Link to={`/eventInfoPage/1`}> <img src= {img2} /> </Link>
+        <Link to={`/eventInfoPage/4`}> <img src= {img3} /> </Link>
         </Carousel>
     );
   }
